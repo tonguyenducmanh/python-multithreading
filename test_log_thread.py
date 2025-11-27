@@ -1,3 +1,8 @@
+"""
+File test việc chạy 1 thread chính để add dữ liệu vào queue mem
+1 thread phụ đợi đủ n data sẽ mang đi xử lý
+"""
+
 from threading import Lock, Thread, Event, current_thread
 from queue import Queue, Empty
 import time

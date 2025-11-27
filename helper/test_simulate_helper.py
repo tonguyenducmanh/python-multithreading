@@ -45,9 +45,11 @@ class TestSimulateHelper():
         """
         Hàm giả lập chạy chậm nhưng gọi async
         """
-        loop = asyncio.get_running_loop()
-        return await loop.run_in_executor(
-            None,                     # dùng thread pool mặc định
-            self.slow_function,       # gọi hàm gốc
-            duration_seconds
-        )
+        # loop = asyncio.get_running_loop()
+        # return await loop.run_in_executor(
+        #     None,                     # dùng thread pool mặc định
+        #     self.slow_function,       # gọi hàm gốc
+        #     duration_seconds
+        # )
+
+        return self.slow_function(duration_seconds)

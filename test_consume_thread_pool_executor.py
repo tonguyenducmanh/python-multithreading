@@ -18,7 +18,7 @@ async def receive_message_async(queue_message):
     """
     xử lý data bất đồng bộ trong 1 thread
     """
-    await TestSimulateHelper.get_helper().slow_function_async(1)
+    await TestSimulateHelper.get_helper().slow_function_async(5)
 
 def process_message_async(queue_message):
     """

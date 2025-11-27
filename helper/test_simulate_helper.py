@@ -2,6 +2,7 @@
 Test Simulate hepler
 """
 import time
+import asyncio
 
 class TestSimulateHelper():
     """
@@ -39,3 +40,14 @@ class TestSimulateHelper():
             for i in range(1, 10000):
                 x += i**2
         return x
+    
+    async def slow_function_async(self, duration_seconds):
+        """
+        Hàm giả lập chạy chậm nhưng gọi async
+        """
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(
+            None,                     # dùng thread pool mặc định
+            self.slow_function,       # gọi hàm gốc
+            duration_seconds
+        )
